@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mon premier site</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: lightblue;
+            color: blue;
+            transition: background-color 0.5s;
+        }
+
+        nav {
+            background: lightblue;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav h2 {
+            color: white;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        .accueil {
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .accueil h1 {
+            font-size: 45px;
+            margin-bottom: 20px;
+        }
+
+        .accueil p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+
+        .bouton {
+            background: #007bff;
+            color: white;
+            padding: 15px 25px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 5px;
+        }
+
+        .bouton:hover {
+            background: #0056b3;
+        }
+
+        section {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .cartes {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .carte {
+            background: white;
+            padding: 25px;
+            width: 250px;
+            border-radius: 10px;
+        }
+
+        footer {
+            background: lightblue;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <h2>Cmra05</h2>
+
+        <div>
+            <a href="#accueil">Accueil</a>
+            <a href="#apropos">À propos</a>
+            <a href="#apprentissage">Apprentissage</a>
+        </div>
+    </nav>
+
+    <section class="accueil" id="accueil">
+
+        <h1>Bienvenue sur mon site 👋</h1>
+
+        <p id="message">
+            Je suis débutant en programmation
+            et je vais devenir très bon !
+        </p>
+
+        <button class="bouton" onclick="changerMessage()">
+            Découvrir mon parcours
+        </button>
+
+        <button class="bouton" onclick="changerCouleur()">
+            Changer la couleur
+        </button>
+
+    </section>
+
+    <section id="apropos">
+
+        <h2>À propos de moi</h2>
+
+        <p>
+            Je découvre actuellement la programmation
+            et j'apprends à créer des sites web.
+        </p>
+
+    </section>
+
+    <section id="apprentissage">
+
+        <h2>Ce que j'apprends</h2>
+
+        <div class="cartes">
+
+            <div class="carte">
+                <h3>HTML</h3>
+                <p>
+                    Créer la structure d'une page web.
+                </p>
+            </div>
+
+            <div class="carte">
+                <h3>CSS</h3>
+                <p>
+                    Donner du style et des couleurs au site.
+                </p>
+            </div>
+
+            <div class="carte">
+                <h3>Python</h3>
+                <p>
+                    Apprendre la programmation et la logique.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <footer>
+        <p>Mon premier site web © 2026</p>
+    </footer>
+
+    <script>
+
+        function changerMessage() {
+            document.getElementById("message").innerText =
+                "Bravo ! Tu viens de faire fonctionner ton premier bouton ! 🚀";
+        }
+
+        let couleur = 0;
+
+        function changerCouleur() {
+
+            if (couleur === 0) {
+                document.body.style.backgroundColor = "yellow";
+                couleur = 1;
+
+            } else if (couleur === 1) {
+                document.body.style.backgroundColor = "green";
+                couleur = 2;
+
+            } else if (couleur === 2) {
+                document.body.style.backgroundColor = "blue";
+                couleur = 3;
+
+            } else {
+                document.body.style.backgroundColor = "violet";
+                couleur = 0;
+            }
+        }
+
+    </script>
+
+</body>
+</html>
