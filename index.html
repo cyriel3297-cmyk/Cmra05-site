@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Mon premier site</title>
+    <title>Cmra Shop</title>
 
     <style>
         * {
@@ -15,13 +15,14 @@
 
         body {
             font-family: Arial, sans-serif;
-            background: lightblue;
-            color: blue;
-            transition: background-color 0.5s;
+            background: #f4f4f4;
+            color: #222;
         }
 
+        /* MENU */
         nav {
-            background: lightblue;
+            background: #222;
+            color: white;
             padding: 20px;
             display: flex;
             justify-content: space-between;
@@ -35,180 +36,331 @@
         nav a {
             color: white;
             text-decoration: none;
-            margin-left: 20px;
+            margin-left: 15px;
         }
 
+        /* ACCUEIL */
         .accueil {
-            min-height: 80vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            background: #007bff;
+            color: white;
             text-align: center;
-            padding: 30px;
+            padding: 70px 20px;
         }
 
         .accueil h1 {
             font-size: 45px;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         .accueil p {
             font-size: 20px;
+        }
+
+        /* PRODUITS */
+        .produits {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .produits h2 {
+            font-size: 32px;
             margin-bottom: 30px;
+        }
+
+        .liste-produits {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .produit {
+            background: white;
+            width: 260px;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .image-produit {
+            font-size: 70px;
+            margin-bottom: 15px;
+        }
+
+        .produit h3 {
+            margin-bottom: 10px;
+        }
+
+        .prix {
+            color: #007bff;
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 15px;
         }
 
         .bouton {
             background: #007bff;
             color: white;
-            padding: 15px 25px;
             border: none;
-            border-radius: 8px;
+            padding: 12px 20px;
+            border-radius: 7px;
             cursor: pointer;
             font-size: 16px;
-            margin: 5px;
         }
 
         .bouton:hover {
             background: #0056b3;
         }
 
-        section {
-            padding: 60px 20px;
+        /* PANIER */
+        .panier {
+            background: white;
+            margin: 30px auto;
+            padding: 30px;
+            max-width: 600px;
+            border-radius: 12px;
             text-align: center;
         }
 
-        .cartes {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
+        .panier h2 {
+            margin-bottom: 20px;
+        }
+
+        #liste-panier {
+            margin: 20px 0;
+        }
+
+        .total {
+            font-size: 24px;
+            font-weight: bold;
+            margin: 20px;
+        }
+
+        /* PIED DE PAGE */
+        footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 25px;
             margin-top: 30px;
         }
 
-        .carte {
-            background: white;
-            padding: 25px;
-            width: 250px;
-            border-radius: 10px;
-        }
+        /* TELEPHONE */
+        @media (max-width: 600px) {
 
-        footer {
-            background: lightblue;
-            color: white;
-            text-align: center;
-            padding: 20px;
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .accueil h1 {
+                font-size: 35px;
+            }
+
+            .produit {
+                width: 90%;
+            }
         }
     </style>
 </head>
 
 <body>
 
+    <!-- MENU -->
     <nav>
-        <h2>Cmra05</h2>
+
+        <h2>🛍️ Cmra Shop</h2>
 
         <div>
             <a href="#accueil">Accueil</a>
-            <a href="#apropos">À propos</a>
-            <a href="#apprentissage">Apprentissage</a>
+            <a href="#produits">Produits</a>
+            <a href="#panier">Panier 🛒</a>
         </div>
+
     </nav>
 
+
+    <!-- ACCUEIL -->
     <section class="accueil" id="accueil">
 
-        <h1>Bienvenue sur mon site 👋</h1>
-
-        <p id="message">
-            Je suis débutant en programmation
-            et je vais devenir très bon !
-        </p>
-
-        <button class="bouton" onclick="changerMessage()">
-            Découvrir mon parcours
-        </button>
-
-        <button class="bouton" onclick="changerCouleur()">
-            Changer la couleur
-        </button>
-
-    </section>
-
-    <section id="apropos">
-
-        <h2>À propos de moi</h2>
+        <h1>Bienvenue chez Cmra Shop 🛍️</h1>
 
         <p>
-            Je découvre actuellement la programmation
-            et j'apprends à créer des sites web.
+            Découvrez nos produits et ajoutez vos préférés au panier !
         </p>
 
     </section>
 
-    <section id="apprentissage">
 
-        <h2>Ce que j'apprends</h2>
+    <!-- PRODUITS -->
+    <section class="produits" id="produits">
 
-        <div class="cartes">
+        <h2>Nos produits</h2>
 
-            <div class="carte">
-                <h3>HTML</h3>
-                <p>
-                    Créer la structure d'une page web.
+        <div class="liste-produits">
+
+
+            <!-- PRODUIT 1 -->
+            <div class="produit">
+
+                <div class="image-produit">
+                    👕
+                </div>
+
+                <h3>T-shirt</h3>
+
+                <p class="prix">
+                    10 000 FCFA
                 </p>
+
+                <button class="bouton"
+                    onclick="ajouterAuPanier('T-shirt', 10000)">
+                    Ajouter au panier
+                </button>
+
             </div>
 
-            <div class="carte">
-                <h3>CSS</h3>
-                <p>
-                    Donner du style et des couleurs au site.
+
+            <!-- PRODUIT 2 -->
+            <div class="produit">
+
+                <div class="image-produit">
+                    🧢
+                </div>
+
+                <h3>Casquette</h3>
+
+                <p class="prix">
+                    5 000 FCFA
                 </p>
+
+                <button class="bouton"
+                    onclick="ajouterAuPanier('Casquette', 5000)">
+                    Ajouter au panier
+                </button>
+
             </div>
 
-            <div class="carte">
-                <h3>Python</h3>
-                <p>
-                    Apprendre la programmation et la logique.
+
+            <!-- PRODUIT 3 -->
+            <div class="produit">
+
+                <div class="image-produit">
+                    🎒
+                </div>
+
+                <h3>Sac</h3>
+
+                <p class="prix">
+                    15 000 FCFA
                 </p>
+
+                <button class="bouton"
+                    onclick="ajouterAuPanier('Sac', 15000)">
+                    Ajouter au panier
+                </button>
+
             </div>
 
         </div>
 
     </section>
 
+
+    <!-- PANIER -->
+    <section class="panier" id="panier">
+
+        <h2>🛒 Mon panier</h2>
+
+        <div id="liste-panier">
+            Ton panier est vide.
+        </div>
+
+        <div class="total">
+            Total : <span id="total">0</span> FCFA
+        </div>
+
+        <button class="bouton" onclick="viderPanier()">
+            Vider le panier
+        </button>
+
+    </section>
+
+
+    <!-- PIED DE PAGE -->
     <footer>
-        <p>Mon premier site web © 2026</p>
+
+        <p>
+            Cmra Shop © 2026
+        </p>
+
     </footer>
 
+
+    <!-- JAVASCRIPT -->
     <script>
 
-        function changerMessage() {
-            document.getElementById("message").innerText =
-                "Bravo ! Tu viens de faire fonctionner ton premier bouton ! 🚀";
+        let panier = [];
+
+        let total = 0;
+
+
+        function ajouterAuPanier(nom, prix) {
+
+            panier.push({
+                nom: nom,
+                prix: prix
+            });
+
+            total = total + prix;
+
+            afficherPanier();
+
         }
 
-        let couleur = 0;
 
-        function changerCouleur() {
+        function afficherPanier() {
 
-            if (couleur === 0) {
-                document.body.style.backgroundColor = "yellow";
-                couleur = 1;
+            let liste = document.getElementById("liste-panier");
 
-            } else if (couleur === 1) {
-                document.body.style.backgroundColor = "green";
-                couleur = 2;
+            liste.innerHTML = "";
 
-            } else if (couleur === 2) {
-                document.body.style.backgroundColor = "blue";
-                couleur = 3;
+            if (panier.length === 0) {
+
+                liste.innerText = "Ton panier est vide.";
 
             } else {
-                document.body.style.backgroundColor = "violet";
-                couleur = 0;
+
+                panier.forEach(function(produit) {
+
+                    let element = document.createElement("p");
+
+                    element.innerText =
+                        produit.nom + " - " +
+                        produit.prix + " FCFA";
+
+                    liste.appendChild(element);
+
+                });
+
             }
+
+            document.getElementById("total").innerText = total;
+
+        }
+
+
+        function viderPanier() {
+
+            panier = [];
+
+            total = 0;
+
+            afficherPanier();
+
         }
 
     </script>
 
 </body>
-</html>
+</html>    
